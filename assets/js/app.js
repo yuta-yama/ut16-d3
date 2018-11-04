@@ -263,7 +263,7 @@ function successHandle(stateData) {
             abbrGroup = updateToolTip(chosenXAxis, chosenYAxis, abbrGroup);
     
             // changes classes to change bold text
-            if (chosenYAxis === "healthcare") {
+            if (chosenYAxis === "noHealthInsurance") {
                 yLabel1
                     .classed("active", true)
                     .classed("inactive", false);
