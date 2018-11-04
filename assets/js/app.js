@@ -171,6 +171,8 @@ function successHandle(stateData) {
     // Update ToolTip function above csv import
     var circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
 
+    var abbrGroup = updateToolTip(chosenXAxis, chosenYAxis, abbrGroup);
+
     // X axis labels event listener
     xLabelsGroup.selectAll("text").on("click", function() {
     // get value of selection
@@ -194,6 +196,8 @@ function successHandle(stateData) {
 
         // updates tooltips with new info
         circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
+
+        abbrGroup = updateToolTip(chosenXAxis, chosenYAxis, abbrGroup);
 
         // changes classes to change bold text
         if (chosenXAxis === "income") {
@@ -255,6 +259,8 @@ function successHandle(stateData) {
     
             // updates tooltips with new info
             circlesGroup = updateToolTip(chosenXAxis, chosenYAxis, circlesGroup);
+
+            abbrGroup = updateToolTip(chosenXAxis, chosenYAxis, abbrGroup);
     
             // changes classes to change bold text
             if (chosenYAxis === "healthcare") {
@@ -293,17 +299,3 @@ function successHandle(stateData) {
             }
         });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

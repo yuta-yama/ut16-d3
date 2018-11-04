@@ -106,3 +106,44 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
         });
     return circlesGroup;
 }
+
+/// Function used to update abbr group with new tooltip
+function updateToolTip(chosenXAxis, chosenYAxis, abbrGroup) {
+
+    if (chosenXAxis === "income") {
+        var xLabel = "Household Income (Median):";
+    }
+    else if (chosenXAxis === "poverty") {
+        var xLabel = "In Poverty (%):";
+    }
+    else {
+        var xLabel = "Median Age:"
+    }
+
+    if (chosenYAxis === "noHealthInsurance") {
+        var yLabel = "Lacks Healthcare (%):";
+    }
+    else if (chosenYAxis === "obesity") {
+        var yLabel = "Obesity (%):";
+    }
+    else {
+        var yLabel = "Smokes (%):"
+    }
+
+    /// Setting up Tooltip with mouseover and mouseout
+    var toolTip = d3.tip()
+        .attr("class", "d3-tip")
+        .offset([105, 0])
+        .html(function(d) {
+            return (`<b>${d["state"]}</b><br>${xLabel} <b>${d[chosenXAxis]}</b><br>${yLabel} <b>${d[chosenYAxis]}</b>`)
+        });
+        
+    abbrGroup.call(toolTip);
+    abbrGroup.on("mouseover", function(data) {
+        toolTip.show(data, this);
+    })
+        .on("mouseout", function(data, index) {
+            toolTip.hide(data);
+        });
+    return abbrGroup;
+}
