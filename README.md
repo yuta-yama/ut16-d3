@@ -18,9 +18,3 @@ D3 tooltips were added to the circles in order to reveal the specific element's 
 ![Result](Images/yuta_yamaguchi_matplotlib02.png)
 ![Result](Images/yuta_yamaguchi_matplotlib03.png)
 
-## Finished Result
-
-The visualization was deployed to Heroku for live demonstration.
-
-[Heroku App]()
-
